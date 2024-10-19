@@ -1,10 +1,12 @@
 import React from 'react';
 import DataDisplay from './components/DataDisplay';
+import LoginButton from './login';
 
 function App() {
   return (
     <div className="App">
-      <DataDisplay />
+      <LoginButton />
+      {/* <DataDisplay /> */}
     </div>
   );
 }

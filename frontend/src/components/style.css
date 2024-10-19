@@ -1,0 +1,90 @@
+.text {
+    font-size: xx-large;
+    font-weight: revert;
+}
+
+.page {
+    /* margin: 20px; */
+    padding: 10px;
+    background-color: #fdf3fd;
+    height: 100vh;
+}
+
+
+.both {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    /* align-items: center; */
+}
+
+.charts {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* Filter Container */
+.filter-container {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* Filter Title */
+.filter-title {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Filter Controls */
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Filter Group */
+.filter-group {
+    flex: 1 1 200px;
+}
+
+/* Filter Label */
+.filter-label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Filter Select and Datepicker */
+.filter-select,
+.filter-datepicker {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Focus styles for Select and Datepicker */
+.filter-select:focus,
+.filter-datepicker:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    .filter-controls {
+        flex-direction: column;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+}
