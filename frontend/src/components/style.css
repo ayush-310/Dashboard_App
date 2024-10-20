@@ -1,28 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.login-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.login-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #167bff;
+    color: #fff;
+}
+
+.top-bar img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.top-bar h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.top-bar p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.top-bar button {
+    background-color: #f04a24;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.top-bar button:hover {
+    background-color: #d1391b;
+}
+
+.aa {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
 .text {
     font-size: xx-large;
     font-weight: revert;
 }
 
-.page {
-    /* margin: 20px; */
+.pg {
     padding: 10px;
-    background-color: #fdf3fd;
-    height: 100vh;
+
 }
 
+.home {
+    background-color: #fdf3fd;
+    /* height: 100vh; */
+    margin: 10px;
+}
 
+/* Responsive Flexbox */
 .both {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    /* align-items: center; */
+    align-items: center;
+    /* Center-align on smaller screens */
 }
 
 .charts {
+    width: 100%;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    /* Ensure charts wrap on smaller screens */
 }
 
+/* Chart container for responsiveness */
+.charts>div {
+    width: 100%;
+    max-width: 500px;
+    /* Keep charts responsive */
+    margin-bottom: 20px;
+    /* Add spacing between charts */
+}
 
 /* Filter Container */
 .filter-container {
@@ -30,6 +129,9 @@
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 30px;
+    width: 100%;
+    max-width: 800px;
+    /* Limit max width for filters */
 }
 
 /* Filter Title */
@@ -44,11 +146,14 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: space-between;
 }
 
 /* Filter Group */
 .filter-group {
     flex: 1 1 200px;
+    min-width: 180px;
+    /* Ensure filters don't shrink too much */
 }
 
 /* Filter Label */
@@ -78,13 +183,154 @@
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
-/* Media Query for Responsive Design */
+/* Flexbox for Filter Group */
+.dd {
+    display: flex;
+    flex-wrap: wrap;
+    /* Ensure wrapping for filters */
+    gap: 15px;
+    width: 100%;
+}
+
+/* Media Query for Tablets */
+@media (max-width: 1024px) {
+    .charts>div {
+        max-width: 100%;
+        /* Make charts full width on smaller screens */
+    }
+
+    .filter-container {
+        max-width: 100%;
+        /* Make filter container full width */
+    }
+
+    .dd {
+        justify-content: center;
+        /* Center filters */
+    }
+}
+
+/* Media Query for Small Devices */
 @media (max-width: 768px) {
+    .charts {
+        flex-direction: column;
+        /* Stack charts vertically */
+        align-items: center;
+        /* Center charts */
+    }
+
     .filter-controls {
         flex-direction: column;
+        /* Stack filter controls vertically */
+        gap: 10px;
+        /* Reduce gap for filters */
     }
 
     .filter-group {
         width: 100%;
+        /* Make filter groups full width */
+    }
+}
+
+
+/* Top Bar Styles */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #167bff;
+    color: #fff;
+    flex-wrap: wrap;
+    /* Allow wrapping for smaller screens */
+}
+
+/* Top Bar Image (Logo) */
+.top-bar img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Top Bar Title */
+.top-bar h2 {
+    margin: 0;
+    font-size: 18px;
+    flex: 1;
+    /* Take up available space */
+    text-align: center;
+    /* Center the title on small screens */
+}
+
+/* Top Bar Paragraph (Subtitle) */
+.top-bar p {
+    margin: 0;
+    font-size: 14px;
+    display: none;
+    /* Hide on smaller screens */
+}
+
+/* Top Bar Button */
+.top-bar button {
+    background-color: #f04a24;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.top-bar button:hover {
+    background-color: #d1391b;
+}
+
+/* Responsive Styles for Small Screens */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: flex-start;
+        /* Align items to the left */
+        padding: 10px;
+        /* Reduce padding */
+    }
+
+    .top-bar img {
+        margin-bottom: 10px;
+        /* Add space between logo and title */
+    }
+
+    .top-bar h2 {
+        font-size: 16px;
+        /* Reduce font size for smaller screens */
+        text-align: left;
+        /* Align title to the left */
+        margin-bottom: 10px;
+        /* Add margin for better spacing */
+    }
+
+    .top-bar p {
+        display: none;
+        /* Hide paragraph on small screens */
+    }
+
+    .top-bar button {
+        padding: 8px 12px;
+        /* Adjust button size for small screens */
+        align-self: flex-end;
+        /* Align button to the right */
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar h2 {
+        font-size: 14px;
+        /* Further reduce title size on very small screens */
+    }
+
+    .top-bar button {
+        padding: 6px 10px;
+        /* Smaller padding for the button */
     }
 }

@@ -11,7 +11,7 @@ const Profile = () => {
 
     return (
         isAuthenticated && (
-            <div style={{ margin: "10px" }}>
+            <div className="home">
 
                 {/* Topbar  */}
                 <div className="top-bar">
