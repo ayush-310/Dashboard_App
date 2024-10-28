@@ -23,11 +23,10 @@ const Profile = () => {
                         </div>
                     </div>
                     <h1 className="text">Product Analytics Dashboard</h1>
-
                     <button onClick={() => logout({ returnTo: window.location.origin })}>Logout</button>
                 </div>
-
-                <DataDisplay />            </div>
+                <DataDisplay />
+            </div>
 
         )
     );
