@@ -1,13 +1,19 @@
 import React from 'react';
-import DataDisplay from './components/DataDisplay';
-import LoginButton from './login';
-
+import DataDisplay from "./components/DataDisplay"
+import Login from './components/Login';
+import Register from './components/Register';
+import Home from './components/Home';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 function App() {
   return (
-    <div className="App">
-      <LoginButton />
-      {/* <DataDisplay /> */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
